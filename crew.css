@@ -1,0 +1,160 @@
+::selection {
+  color: rgb(0, 202, 221);
+} 
+:root {
+  --page-heading: "Bellefair", serif;
+  --page-para: "Barlow Condensed", sans-serif;
+}
+body::before {
+  background: url(assets/crew/background-crew-desktop.jpg) no-repeat;
+  background-size: cover;
+}
+.crew {
+  font-size: 3rem;
+  font-family: var(--page-heading);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #fff;
+  padding: 1rem 10rem;
+}
+.crew span {
+  color: gray;
+}
+.crew-main {
+  display: flex;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 0rem 10rem;
+  overflow: hidden;
+}
+
+.crew-main-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 70vh;
+
+  text-transform: uppercase;
+}
+.crew-main-box:first-child {
+  animation: fade 1.3s ease-in;
+}
+.crew-main-box:last-child {
+  animation: fade-right 1.3s ease-in;
+}
+
+.role {
+  font-family: var(--page-heading);
+  color: #ac8e8e;
+  font-size: 3rem;
+  font-weight: lighter;
+  padding: 1rem 0;
+}
+.name {
+  font-family: var(--page-heading);
+  margin: 1rem 0;
+  padding: 0em;
+  font-size: 5rem;
+  color: #fff;
+}
+.bio {
+  font-family: var(--page-para);
+  color: rgba(255, 255, 255, 0.707);
+  font-size: 2rem;
+  line-height: 2;
+  margin-bottom: 7rem;
+}
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+main {
+  display: flex;
+  min-height: 70vh;
+  overflow-x: hidden;
+  position: relative;
+}
+.slide {
+  transition: all 1s linear;
+}
+.picture-2 {
+  left: 100%;
+}
+.btn {
+  background: transparent;
+  border: none;
+}
+.previous {
+  position: fixed;
+  top: 50%;
+}
+.next {
+  position: fixed;
+  top: 50%;
+  right: 0;
+}
+.btn i {
+  font-size: 3rem;
+  color: white;
+  cursor: pointer;
+  margin: 20px;
+  padding: 20px;
+}
+
+/* keyframes  */
+
+@keyframes fade-right {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+/* media queries  */
+
+@media (max-width: 750px) {
+  body::before {
+    background: url("assets/crew/background-crew-tablet.jpg") no-repeat;
+  }
+  .crew {
+    padding: 2rem;
+    text-align: center;
+  }
+  .crew-main {
+    flex-direction: column;
+    padding-block-end: 3rem;
+    overflow: visible;
+  }
+  .crew-main-box {
+    align-items: center;
+    margin: 3rem 2rem;
+    text-align: center;
+    animation: fade-right 1.3s ease-in;
+  }
+  .name {
+    margin: 2rem 0;
+    font-size: 3rem;
+  }
+  .bio {
+    margin: 0;
+    text-align: justify;
+  }
+}
+@media (max-width: 500px) {
+  body::before {
+    background: url("assets/crew/background-crew-mobile.jpg") no-repeat;
+  }
+  .crew-main {
+    padding: 1rem;
+  }
+  .btn {
+    display: none;
+  }
+}
