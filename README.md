@@ -1,2 +1,2 @@
 # space-tour
-live link:
+live link: https://space-tour-codersuraj07.netlify.app/
